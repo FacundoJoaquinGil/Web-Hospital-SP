@@ -10,9 +10,10 @@
 La página cuenta también con una sección llamada "Historia", donde se describe el crecimiento del hospital a lo largo del tiempo, acompañado de fotos que ilustran su evolución. Los usuarios pueden ver el personal médico en funciones, con sus horarios y áreas de especialización, así como un apartado que recopila las noticias más importantes del ámbito médico.
 
 En cuanto a la administración, la plataforma cuenta con un sistema de login que permite a los administradores del hospital iniciar sesión y gestionar usuarios, agregar y eliminar profesionales. También incluye una sección que permite subir documentos para que el personal del hospital pueda visualizarlos. Todos estos elementos brindan un sistema de administración completo y eficiente para el hospital.
-
-muy pronto estare subiendo un video con información técnica, donde muestro el funcionamiento de la web en producción.
 </p>
+
+<h4>A continuacion dejo un video de el funcionamiento de la pagina localmente 🎥</h4>
+<a href="https://www.youtube.com/watch?v=pFlgjTjPW-A&ab_channel=FacundoJoaqu%C3%ADnGil" target="_blank">Link de el video aqui</a>👈
 
 <h4>Tecnologias Utilizadas 📑</h4>
 
@@ -23,8 +24,4 @@ muy pronto estare subiendo un video con información técnica, donde muestro el 
 • MySQL Workbench </br>
 • Bootstrap </br>
 • Axios </br>
-
-
-<h4>Sitio Web 💻</h4>
-
-<p>Proximamente estare costeando un host para poder subir la pagina web completa</p>
+• Librerias Varias </br>
