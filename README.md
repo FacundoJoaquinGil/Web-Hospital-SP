@@ -1,6 +1,6 @@
 <h2>Pagina Web - Hospital de San Pablo, Tucuman 🏥</h2>
 
-![hospital](https://github.com/user-attachments/assets/e3faf270-88e0-40f7-b356-f7991a610aad)
+![Screenshot_1](https://github.com/user-attachments/assets/f0aa5870-af54-4b1d-b404-a63703d34089)
 
 
 <h4>Descripcion 🔎</h4>
@@ -12,8 +12,7 @@ La página cuenta también con una sección llamada "Historia", donde se describ
 En cuanto a la administración, la plataforma cuenta con un sistema de login que permite a los administradores del hospital iniciar sesión y gestionar usuarios, agregar y eliminar profesionales. También incluye una sección que permite subir documentos para que el personal del hospital pueda visualizarlos. Todos estos elementos brindan un sistema de administración completo y eficiente para el hospital.
 </p>
 
-<h4>A continuacion dejo un video de el funcionamiento de la pagina localmente 🎥</h4>
-<a href="https://www.youtube.com/watch?v=pFlgjTjPW-A&ab_channel=FacundoJoaqu%C3%ADnGil" target="_blank">Link de el video aqui</a>👈
+<h4>Estaré haciendo un video con el diseño completo y la pagina en desarrollo (6/6/25) 🎥</h4>
 
 <h4>Tecnologias Utilizadas 📑</h4>
 
