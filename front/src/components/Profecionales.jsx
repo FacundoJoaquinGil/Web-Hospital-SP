@@ -74,12 +74,6 @@ const Profecionales = () => {
 
   return (
     <>
-      <div>
-        <h3 className="titulo-agregar-profesional">
-          AGREGAR PROFESIONAL
-        </h3>
-      </div>
-  
       <div className="body-agregar-profesional">
         <div className="agregar-profesional-contenedor">
           <h3 className="agregar-profesional-titulo">Datos del profesional</h3>
@@ -144,7 +138,7 @@ const Profecionales = () => {
             <br />
             <div className="body-botones-profesional">
               <button
-                className="boton-agregar-profesional"
+                className="boton-agregar"
                 type="submit"
                 onClick={agregarProfesionales}
               >

@@ -1,66 +1,108 @@
-
-.titulo-historia{
-color: white;
-text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.733);
-text-align: center;
-padding: 20px;
-
+.historia-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  min-height: 100vh;
 }
 
-.historial-body{
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+.historia-container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.parrafo-historia{
-    background-image: url("https://img.freepik.com/foto-gratis/fondo-papel-viejo-vendimia-grunge_1373-431.jpg?size=626&ext=jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: drop-shadow(7px 7px 1px rgba(0, 0, 0, 0.551));
-    color: black;
-    text-align: start;
-    max-width: 750px;
-    font-size: 20px;
-    padding: 20px;
+.historia-titulo {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-.columna-img-historia{
-    display: flex;
-    flex-direction: column;
-    
+.historia-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border-radius: 2px;
 }
 
-.imagen-hitoria1{
-    
-    filter: drop-shadow(5px 5px 1px  #00000082);
-    background-color: white;
-    height: 750px;
-    margin-bottom: 20px;
+.historia-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-.imagen-hitoria1 p{
-    padding: 10px;
-    width: 500px;
-}
-.imagen-hitoria2 p{
-    padding: 10px;
-    width: 500px;
+.historia-texto {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.imagen-hitoria2{
-    filter: drop-shadow(5px 5px 1px #00000082);
-    background-color: white;
-    height: 500px;
-    margin-bottom: 20px;
+.historia-texto p {
+  color: #34495e;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
-.columna-img-historia img{
-    
-    width: 500px;
-    /* filter: drop-shadow(10px 10px  #e2e3e7); */
-    
-    padding: 10px;
-    
+.historia-galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.galeria-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: translateY(-5px);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 3px solid #3498db;
+}
+
+.galeria-item p {
+  padding: 1.5rem;
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .historia-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .historia-galeria {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .historia-section {
+    padding: 2rem 1rem;
+  }
+  
+  .historia-titulo {
+    font-size: 2rem;
+  }
+  
+  .galeria-item img {
+    height: 250px;
+  }
 }

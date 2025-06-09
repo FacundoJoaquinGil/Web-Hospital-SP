@@ -17,7 +17,7 @@ export const AdminUsuarios = () => {
       .get("http://localhost:8000/login")
       .then((resp) => {
         setUsuarios(resp.data);
-        setUsuariosFiltrados(resp.data); 
+        setUsuariosFiltrados(resp.data);
       })
       .catch((error) => console.error("Error al obtener usuarios", error));
   };
@@ -46,29 +46,17 @@ export const AdminUsuarios = () => {
   return (
     <div className="pt-3">
       <div className="pb-3">
-        <h3
-          style={{
-            color: "white",
-            border: "2px solid #28a745",
-            padding: "5px",
-            borderRadius: "8px",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-            backgroundColor: "#333333",
-            textAlign: "center",
-          }}
-        >
-          USUARIOS
-        </h3>
         <input
           type="text"
-          placeholder="Buscar Usuarios 🔎"
+          className="search-input"
+          placeholder="Buscar Usuarios..."
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
         />
       </div>
 
       <button
-        className="btn btn-success"
+        className="boton-agregar"
         onClick={() => {
           setToggleUser(true);
           setToggleEditar(true);
@@ -92,7 +80,7 @@ export const AdminUsuarios = () => {
         <TablaUsuarios
           usuarios={usuariosFiltrados}
           handleToggleEditar={handleToggleEditar}
-          getUsuarios={getUsuarios} // Pasar getUsuarios como prop
+          getUsuarios={getUsuarios} 
         />
       )}
     </div>

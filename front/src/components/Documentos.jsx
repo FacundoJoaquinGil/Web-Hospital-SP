@@ -77,29 +77,19 @@ export const Documentos = () => {
   return (
     <div className="pt-3">
       <div className="pb-3">
-        <h3
-          style={{
-            color: "white",
-            border: "2px solid #28a745",
-            padding: "5px",
-            borderRadius: "8px",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-            backgroundColor: "#333333",
-            textAlign: "center",
-          }}
-        >
-          DOCUMENTOS
-        </h3>
         <input
           type="text"
-          placeholder="Buscar Documento 🔎"
+          placeholder="Buscar Documento..."
+          className="search-input"
           onChange={(e) => setBuscarDoc(e.target.value)}
           value={buscarDoc}
         />
         <br />
 
         <button
-          className="btn btn-info"
+          className={` ${
+            mostrarFormulario ? "btn btn-danger" : "boton-agregar"
+          } `}
           onClick={() => setMostrarFormulario(!mostrarFormulario)}
         >
           {mostrarFormulario ? "Cancelar" : "Agregar un nuevo documento"}
@@ -109,6 +99,7 @@ export const Documentos = () => {
           <div className="body-file-upload">
             <input
               type="text"
+              className="search-input"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
               placeholder="Título del Documento"
@@ -127,7 +118,7 @@ export const Documentos = () => {
             </div>
 
             <div className="botones-documentos">
-              <button className="btn btn-success" onClick={handleUpload}>
+              <button className="boton-agregar" onClick={handleUpload}>
                 Agregar
               </button>
             </div>
@@ -151,7 +142,9 @@ export const Documentos = () => {
           {filteredDocuments.length > 0 ? (
             filteredDocuments.map((documento) => (
               <tr className="odd" key={documento.documentosid}>
-                <td>{documento.titulo}</td>
+                <td style={{ fontWeight: "bold", color: "white" }}>
+                  {documento.titulo}
+                </td>
                 <td>
                   <button
                     className="btn btn-danger"

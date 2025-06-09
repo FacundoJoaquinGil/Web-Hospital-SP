@@ -1,27 +1,186 @@
-.Titulo-Profesional {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.437);
+.panel-control-main {
+  min-height: calc(100vh - 160px);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 3rem 2rem;
 }
 
-.Titulo-Profesional span{
-    font-weight: bold;
-    color: #28a745;
-    text-transform: uppercase;
+.panel-control-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.panel-control{
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.437);
+.panel-control-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2 0%, #357abd 100%);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-active {
-    background-color: #ffffff;
-    color: rgb(0, 106, 255);
+.panel-control-title span {
+  font-weight: 800;
+  background: linear-gradient(90deg, #4a90e2 0%, #357abd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.panel-control-subtitle {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 2rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.panel-control-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.panel-control-btn {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #2c3e50;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.panel-control-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel-control-btn:hover {
+  color: #2c6aa0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: translateX(8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.panel-control-btn:hover::before {
+  transform: scaleY(1);
+}
+
+.panel-control-btn-active {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.2);
+}
+
+.panel-control-btn-active:hover {
+  color: white;
+  background: linear-gradient(135deg, #357abd 0%, #2c6aa0 100%);
+  transform: translateX(8px);
+}
+
+.panel-control-btn-active::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buscador */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9;
+}
+
+.search-input::placeholder {
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4A90E2;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.search-input:focus::placeholder {
+  color: #ccc;
+}
+
+/* Animaciones */
+@keyframes panelControlFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-control-container {
+  animation: panelControlFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .panel-control-main {
+    padding: 2rem 1rem;
+  }
+
+  .panel-control-title {
+    font-size: 2.2rem;
+  }
+
+  .panel-control-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .panel-control-btn {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .panel-control-container {
+    padding: 1.5rem;
+  }
+}
   

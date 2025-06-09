@@ -1,13 +1,117 @@
-
-.MainCartilla{
-  padding-top: 40px;
-}
-  
-.divBusqueda{
-  margin-bottom: 10px;
+.MainCartilla {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 160px);
 }
 
-.input-buscar{
-  padding: 5px;
-  border-radius: 5px;
+.divBusqueda {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.input-buscar {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.input-buscar:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.2);
+}
+
+.table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table thead th:hover {
+  background-color: #357abd;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f7fa;
+}
+
+.table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Estilos para el mensaje de "No se encontraron profesionales" */
+.table tbody tr td[colspan="6"] {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Animación para las filas de la tabla */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  animation: fadeIn 0.3s ease-out;
 }

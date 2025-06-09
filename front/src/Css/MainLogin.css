@@ -1,5 +1,5 @@
 .bodyLogin{
-    background: linear-gradient(to top, #081b29c5, #193a1faa);
+    background: linear-gradient(to top, #081b29c5, #0a1929aa);
     height: 102vh;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@
 }
 .titulo1{
     font-size: 35px;
-    color: #0fd850;
+    color: #00a8ff;
 }
 .inp1{
     padding-bottom: 10px;
@@ -40,7 +40,7 @@
     margin-top: 40px;
     padding-right: 10px;
     font-size: 17px;
-    color: #0fd850;
+    color: #00a8ff;
 }
 
 .submit1{
@@ -54,11 +54,11 @@
     border-radius: 40px;
     letter-spacing: 1px;
     cursor: pointer;
-    background: linear-gradient(45deg, #60ba85 0%, #4f976c 100%);
+    background: linear-gradient(45deg, #0097e6 0%, #00a8ff 100%);
 }
 
 .submit1:hover{
-    background: #3f7c57;
+    background: #0097e6;
 }
 
 .banner1{
@@ -67,7 +67,7 @@
     right: 0;
     width: 450px;
     height: 390px;
-    background: linear-gradient(to right,#60ba85 0%, #4f976c 100%);
+    background: linear-gradient(to right, #0097e6 0%, #00a8ff 100%);
     clip-path: polygon(0 0,100% 0,100% 100%, 60% 100%);
     padding-right: 70px;
     text-align: right;
@@ -84,7 +84,7 @@
 }
 
 .error{
-    color: #0fd850;
+    color: #00a8ff;
 }
 .btnVolver{
     color: white;

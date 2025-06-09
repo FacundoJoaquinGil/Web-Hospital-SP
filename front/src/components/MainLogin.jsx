@@ -10,7 +10,8 @@ import Swal from "sweetalert2";
 export const MainLogin = () => {
   let navigate = useNavigate();
 
-  const { handleLogear, getUser, getUserId, userId } = useContext(UserContext);
+  const { handleLogear, getUser, getUserId, userId, userNombre } =
+    useContext(UserContext);
   const { valuesForm, onInputChange } = useForm({
     usuario: "",
     contraseña: "",
@@ -21,12 +22,15 @@ export const MainLogin = () => {
       .post("http://localhost:8000/login/login", valuesForm)
       .then((resp) => {
         handleLogear(true);
-        getUserId(resp.data.userId);
         getUser(valuesForm.usuario);
+        getUserId(resp.data.userId);
+
+        const saludo = `Bienvenido ${valuesForm.usuario}`;
+
         navigate("/", { replace: true });
         Swal.fire({
           position: "top",
-          title: "Bienvenido!",
+          title: saludo,
           showConfirmButton: false,
           timer: 1000,
         });
@@ -82,7 +86,7 @@ export const MainLogin = () => {
             </Link>
           </form>
           <div className="banner1">
-            <h1 className="Bienvenido1">Bienvenido</h1>
+            <h1 className="Bienvenido1">Bienvenido{userNombre}</h1>
           </div>
         </div>
       </div>

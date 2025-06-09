@@ -12,10 +12,7 @@ export const MainCartilla = ({ pageProfesionales }) => {
   const [profesionalesFiltrados, setProfesionalesFiltrados] = useState([]);
   const { userNombre } = useContext(UserContext);
 
-
-
   const mostrarProfesionales = () => {
-    
     axios.get("http://localhost:8000/profesionales/").then((resp) => {
       setProfesionales(resp.data);
       setProfesionalesFiltrados(resp.data); 
@@ -27,17 +24,38 @@ export const MainCartilla = ({ pageProfesionales }) => {
   }, []);
 
   const borrarProfesional = async (id) => {
-    if (userNombre === "admin")
+    if (userNombre === "admin") {
       try {
-        await axios.delete(`http://localhost:8000/profesionales/borrarProfesional/${id}`);
-        Swal.fire({
-          icon: "success",
-          title: "Usuario borrado correctamente",
+        const result = await Swal.fire({
+          title: '¿Estás seguro?',
+          text: "Esta acción no se puede deshacer",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar'
         });
-        mostrarProfesionales();
+
+        if (result.isConfirmed) {
+          await axios.delete(`http://localhost:8000/profesionales/borrarProfesional/${id}`);
+          Swal.fire({
+            icon: "success",
+            title: "Profesional eliminado correctamente",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          mostrarProfesionales();
+        }
       } catch (error) {
         console.error("Error al eliminar el profesional:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo eliminar el profesional"
+        });
       }
+    }
   };
 
   const handleBusqueda = (e) => {
@@ -67,142 +85,71 @@ export const MainCartilla = ({ pageProfesionales }) => {
   };
 
   return (
-    <div>
-      <div className="MainCartilla">
-        <div className="col-xl-10 m-auto">
-          <div className="divBusqueda">
-            <input
-              type="text"
-              placeholder="Buscar Especialidad 🔎"
-              className="input-buscar"
-              value={busqueda}
-              onChange={handleBusqueda} 
-            />
-            
-          </div>
-          <table
-            className=" table table-hover table-condensed table-bordered bootstrap-datatable dataTable table-dark"
-            id="tablausuarios"
-            aria-describedby="tablausuarios_info"
-          >
+    <div className="MainCartilla">
+      <div className="col-xl-10 m-auto">
+        <div className="divBusqueda">
+          <input
+            type="text"
+            placeholder="Buscar por especialidad 🔎"
+            className="input-buscar"
+            value={busqueda}
+            onChange={handleBusqueda} 
+          />
+        </div>
+        
+        <div className="table-responsive">
+          <table className="table">
             <thead>
-              <tr role="row">
-                <th
-                  className="sorting_asc"
-                  role="columnheader"
-                  tabIndex="0"
-                  aria-controls="tablausuarios"
-                  rowSpan="1"
-                  colSpan="1"
-                  aria-sort="ascending"
-                  aria-label="Especialidad: Activar para ordenar la columna de manera descendente"
-                  onClick={() => ordenarTabla("especialidad")}
-                >
-                  Especialidad{" "}
-                  {ordenColumna === "especialidad" && ordenAscendente
-                    ? "▲"
-                    : "▼"}
+              <tr>
+                <th onClick={() => ordenarTabla("especialidad")}>
+                  Especialidad {ordenColumna === "especialidad" && (ordenAscendente ? "▲" : "▼")}
                 </th>
-                <th
-                  className="sorting"
-                  role="columnheader"
-                  tabIndex="0"
-                  aria-controls="tablausuarios"
-                  rowSpan="1"
-                  colSpan="1"
-                  aria-label="Prestador: Activar para ordenar la columna de manera ascendente"
-                  onClick={() => ordenarTabla("prestador")}
-                >
-                  Prestador{" "}
-                  {ordenColumna === "prestador" && ordenAscendente ? "▲" : "▼"}
+                <th onClick={() => ordenarTabla("prestador")}>
+                  Prestador {ordenColumna === "prestador" && (ordenAscendente ? "▲" : "▼")}
                 </th>
-                <th
-                  className="sorting"
-                  role="columnheader"
-                  tabIndex="0"
-                  aria-controls="tablausuarios"
-                  rowSpan="1"
-                  colSpan="1"
-                  aria-label="clinica: Activar para ordenar la columna de manera ascendente"
-                  onClick={() => ordenarTabla("clinica")}
-                >
-                  Clinica{" "}
-                  {ordenColumna === "clinica" && ordenAscendente ? "▲" : "▼"}
+                <th onClick={() => ordenarTabla("clinica")}>
+                  Clínica {ordenColumna === "clinica" && (ordenAscendente ? "▲" : "▼")}
                 </th>
-                <th
-                  className="sorting"
-                  role="columnheader"
-                  tabIndex="0"
-                  aria-controls="tablausuarios"
-                  rowSpan="1"
-                  colSpan="1"
-                  aria-label="Horarios: Activar para ordenar la columna de manera ascendente"
-                  onClick={() => ordenarTabla("horario")}
-                >
-                  Horarios{" "}
-                  {ordenColumna === "horario" && ordenAscendente ? "▲" : "▼"}
+                <th onClick={() => ordenarTabla("horario")}>
+                  Horarios {ordenColumna === "horario" && (ordenAscendente ? "▲" : "▼")}
                 </th>
-                {/* {userNombre === "admin" ? (
-                  <th
-                    className="sorting"
-                    role="columnheader"
-                    tabIndex="0"
-                    aria-controls="tablausuarios"
-                    rowSpan="1"
-                    colSpan="1"
-                    aria-label="Editar"
-                  >
-                    EDITAR
-                  </th>
-                ) : null} */}
-                {userNombre === "admin" ? (
-                  <th
-                    className="sorting"
-                    role="columnheader"
-                    tabIndex="0"
-                    aria-controls="tablausuarios"
-                    rowSpan="1"
-                    colSpan="1"
-                    aria-label="Eliminar"
-                  >
-                    Eliminar
-                  </th>
-                ) : null}
+                {userNombre === "admin" && (
+                  <th>Acciones</th>
+                )}
               </tr>
             </thead>
 
-            <tbody role="alert" aria-live="polite" aria-relevant="all">
+            <tbody>
               {profesionalesFiltrados.length > 0 ? (
-                profesionalesFiltrados.map((profesional) => {
-                  return (
-                    <tr className="odd" key={profesional.idProfesionales}>
-                      <td className="sorting_1">{profesional.especialidad}</td>
-                      <td>{profesional.prestador}</td>
-                      <td>{profesional.clinica}</td>
-                      <td>{profesional.horarios}</td>
-                      {/* {userNombre === "admin" ? (
-                        <td>
-                          <button className="btn btn-warning">Editar</button>
-                        </td>
-                      ) : null} */}
-                      {userNombre === "admin" ? (
-                        <td>
-                          <button
-                            className="btn btn-danger"
-                            onClick={() =>
-                              borrarProfesional(profesional.idProfesionales)
-                            }
-                          >
-                            Eliminar
-                          </button>
-                        </td>
-                      ) : null}
-                    </tr>
-                  );
-                })
+                profesionalesFiltrados.map((profesional) => (
+                  <tr key={profesional.idProfesionales}>
+                    <td>{profesional.especialidad}</td>
+                    <td>{profesional.prestador}</td>
+                    <td>{profesional.clinica}</td>
+                    <td>{profesional.horarios}</td>
+                    {userNombre === "admin" && (
+                      <td>
+                        <button
+                         className="btn btn-warning text-white"
+                          onClick={() => ""}
+                        >
+                          Editar
+                        </button>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => borrarProfesional(profesional.idProfesionales)}
+                        >
+                          Eliminar
+                        </button>
+                      </td>
+                    )}
+                  </tr>
+                ))
               ) : (
                 <tr>
-                  <td colSpan="6">No se encontraron profesionales</td>
+                  <td colSpan={userNombre === "admin" ? "5" : "4"}>
+                    No se encontraron profesionales
+                  </td>
                 </tr>
               )}
             </tbody>

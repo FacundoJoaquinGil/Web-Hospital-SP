@@ -1,60 +1,141 @@
-
-.container-HA{
-    background-color: #ebebeb;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://cdn.lecturio.com/assets/Featured-image-Student-Blog-Hospital-Team.jpg") center/cover no-repeat;
-   letter-spacing: 0.2px;
-}
-.vacioHA{
-    width: 100%;
-    height: 80px;
+.container-HA {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  letter-spacing: 0.2px;
+  padding: 50px;
 }
 
-.encabezado{
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.733);
-    text-align: center;
+.vacioHA {
+  width: 100%;
 }
 
-.Tablas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-.tabla1{
-    background-color: #60ba859f;
-    background-position: center;
-    filter: drop-shadow(7px 7px 1px rgba(0, 0, 0, 0.551));
-    color: black;
-    text-align: start;
-    max-width: 750px;
-    font-size: 20px;
-    padding: 20px;
-  }
+.encabezado {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-  .tabla1 table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #000000;
+.encabezado h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: none;
+  margin: 0;
+  padding: 1rem;
+  position: relative;
+  display: inline-block;
+}
 
-  }
-  
-  .tabla1 h2,
-  .tabla1 h3 {
-    text-align: center; 
-    text-decoration: underline;
-  }
+.encabezado h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #4a90e2;
+  border-radius: 2px;
+}
 
-.tabla1 th,
+.tablaHospitalSP {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tablaHospitalSP:hover {
+  transform: translateY(-5px);
+}
+
+.tabla1 {
+  padding: 2rem;
+}
+
+.tabla1 h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.tabla1 h3 {
+  color: #4a90e2;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tabla1 table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+}
+
+.tabla1 th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
 .tabla1 td {
-  border: 2px solid #000000; 
-  padding: 8px; 
-  color: #000000;
-
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 1rem;
 }
-  
 
+.tabla1 tr:last-child td {
+  border-bottom: none;
+}
 
+.tabla1 tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .tabla1 {
+    padding: 1rem;
+  }
+
+  .tabla1 h2 {
+    font-size: 1.5rem;
+  }
+
+  .tabla1 h3 {
+    font-size: 1rem;
+  }
+
+  .tabla1 th,
+  .tabla1 td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tablaHospitalSP {
+  animation: fadeIn 0.5s ease-out;
+}
   
