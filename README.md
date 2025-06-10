@@ -3,8 +3,8 @@
 <br>
 
 <h3>📋 Descripción </h3>
-<p>Sistema integral de gestión hospitalaria desarrollado para el Hospital San Pablo, diseñado para optimizar y digitalizar los procesos administrativos y médicos de la institución. El sistema implementa una arquitectura moderna y escalable que permite una gestión eficiente de pacientes, personal médico y recursos hospitalarios.
-</p>
+
+<p>Desarrollé una plataforma web para el Hospital de San Pablo, orientada a digitalizar y optimizar tanto los procesos administrativos como médicos de la institución. El sistema cuenta con una arquitectura moderna y escalable, lo que permite una gestión eficiente de personal médico y recursos hospitalarios. Además, ofrece a los visitantes acceso a noticias médicas y horarios de atención. Incluye un panel administrativo que permite gestionar personal, subir noticias, cambiar horarios y distribuir documentos internos de manera segura y centralizada</p>
 <br>
 <h3>📹 Video Demo:</h3>
 
@@ -68,36 +68,36 @@ MySQL Workbench – Herramienta para el modelado y administración de la base de
 
 <br>
 
-<h3>📦 Instalación</h3>
+## 📦 Instalación
 <br>
 
-1. Clonar el repositorio: 
+<h3> 1. Clonar el repositorio: </h3>
 
-*en la terminal*
-
+```bash
 git clone https://github.com/FacundoJoaquinGil/Web-Hospital-SP
+```
 <br>
 
-2. Instalar dependencias:
+<h3> 2. Instalar dependencias: </h3>
 
- *en la terminal*
- 
-cd ./Proyecto 
-
+```bash
 npm i
-
+```
 <br>
-3. Copiar el script de la carpeta "DataBase"  y ejecutarlo dentro de mySQL
 
+<h3> 3. Copiar el script de la carpeta "DataBase"  y ejecutarlo dentro de MySQL Workbench </h3>
 <br>
-4. Iniciar el servidor de desarrollo: *en la terminal* 
+
+<h3> 4. Iniciar el servidor de desarrollo: </h3>
+
+```bash
 npm run dev
-
+```
 <br>
-<h3>🔧 Requisitos del Sistema</h3>
 
+<h3>🔧 Requisitos del Sistema</h3>
 <br>
 
 - Node.js (v14 o superior)
-- MySQL (v8.0 o superior)
+- MySQL Workbench (v8.0 o superior)
 - NPM (v6 o superior)
