@@ -1,6 +1,6 @@
 .panel-control-main {
   min-height: calc(100vh - 160px);
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #e9ecef;
   padding: 3rem 2rem;
 }
 

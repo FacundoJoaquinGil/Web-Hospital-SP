@@ -209,7 +209,7 @@ body{
 /* Estilos generales */
 .main-container {
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 
 /* Hero Section */
@@ -479,10 +479,10 @@ body{
   box-shadow: 3px 3px #33333372;
   width: 22px;
   height: 22px;
-  border-right: 4px solid #3333330d;
-  border-bottom: 4px solid #3333330d;
+  border-right: 4px solid #a5a0a046;
+  border-bottom: 4px solid #a5a0a046;
   border-radius: 2px;
-  margin-bottom: -6px;
+  margin-bottom: -12px;
   background: transparent;
   animation: arrowDown 1.5s infinite;
 }
@@ -492,8 +492,8 @@ body{
   box-shadow: 3px 3px #33333372;
   width: 22px;
   height: 22px;
-  border-right: 4px solid #3333330d;
-  border-bottom: 4px solid #3333330d;
+  border-right: 4px solid #a5a0a046;
+  border-bottom: 4px solid #a5a0a046;
   border-radius: 2px;
   margin-bottom: -6px;
   background: transparent;
