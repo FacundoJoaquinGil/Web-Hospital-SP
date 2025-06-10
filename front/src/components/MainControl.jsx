@@ -5,6 +5,7 @@ import { UserContext } from "../context/UserContext";
 import Documentos from "./Documentos";
 import Profecionales from "./Profecionales";
 import AdminNoticias from "./AdminNoticias";
+import AdminHorarios from "./AdminHorarios";
 import '../Css/PanelControl.css';
 
 export const MainControl = () => {
@@ -15,7 +16,8 @@ export const MainControl = () => {
     { id: "usuarios", label: "Usuarios", component: <AdminUsuarios /> },
     { id: "documentos", label: "Documentos", component: <Documentos /> },
     { id: "profesionales", label: "Agregar Profesional", component: <Profecionales /> },
-    { id: "noticias", label: "Gestionar Noticias", component: <AdminNoticias /> }
+    { id: "noticias", label: "Gestionar Noticias", component: <AdminNoticias /> },
+    { id: "horarios", label: "Gestionar Horarios", component: <AdminHorarios /> }
   ];
 
   return (

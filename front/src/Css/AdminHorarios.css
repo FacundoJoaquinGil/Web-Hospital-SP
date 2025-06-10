@@ -1,0 +1,158 @@
+.admin-horarios-container {
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.admin-horarios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
+}
+
+.search-input:focus {
+  border-color: #4A90E2;
+  background-color: #fff;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.3);
+}
+
+.btn-agregar {
+  padding: 12px 24px;
+  background: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.btn-agregar:hover {
+  background: #357ABD;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
+.form-horario {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+.btn-submit {
+  padding: 12px 24px;
+  background: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #357ABD;
+  transform: translateY(-2px);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+}
+
+.table th {
+  background: #4A90E2;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
+  background: #f8f9fa;
+}
+
+.btn-eliminar {
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .admin-horarios-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+} 

@@ -257,14 +257,14 @@ body{
   overflow: hidden;
   transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .news-card:hover,
 .service-card:hover,
 .info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* Sección de Noticias */
@@ -282,7 +282,7 @@ body{
 
 .news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .news-image {
@@ -305,7 +305,7 @@ body{
 /* Sección de Servicios Rápidos */
 .quick-services {
   padding: 4rem 0;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
 }
 
 .section-title {
@@ -337,7 +337,7 @@ body{
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon {
@@ -361,7 +361,7 @@ body{
 
 /* Sección de Información Importante */
 .important-info {
-  background-color: #f8f9fa;
+  background-color: #e9ecef !important;
   padding: 4rem 0;
 }
 
@@ -374,7 +374,7 @@ body{
 
 .info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .info-icon {
@@ -476,7 +476,7 @@ body{
 
 .arrow-line {
   padding: 15px;
-  box-shadow: 3px 3px #33333372;
+  box-shadow: 4px 4px #33333390;
   width: 22px;
   height: 22px;
   border-right: 4px solid #a5a0a046;
@@ -489,7 +489,7 @@ body{
 
 .arrow-line.second {
   padding: 15px;
-  box-shadow: 3px 3px #33333372;
+  box-shadow: 4px 4px #33333390;
   width: 22px;
   height: 22px;
   border-right: 4px solid #a5a0a046;
@@ -547,4 +547,10 @@ body{
     padding: 8px 12px;
     bottom: 16px;
   }
+}
+
+.home-section {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
 }

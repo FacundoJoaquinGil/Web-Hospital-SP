@@ -2,6 +2,7 @@
   padding: 4rem 2rem;
   background: #e9ecef;
   min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
 .historia-container {
@@ -41,7 +42,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
 }
 
 .historia-texto p {
@@ -61,7 +62,7 @@
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 

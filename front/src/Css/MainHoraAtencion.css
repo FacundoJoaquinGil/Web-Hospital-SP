@@ -1,6 +1,6 @@
 .container-HA {
   min-height: 100vh;
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
   letter-spacing: 0.2px;
   padding: 50px;
 }
@@ -40,7 +40,7 @@
 .tablaHospitalSP {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease;
   max-width: 900px;

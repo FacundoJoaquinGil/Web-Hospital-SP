@@ -30,14 +30,14 @@
     background-color: #ffffff;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     max-width: 300px;
   }
   
   #masinfo .divAncla1:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.709);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
   }
   
   #masinfo .divAncla1 img {
@@ -64,7 +64,7 @@
   
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.506);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.6);
   }
   
   .card img {
@@ -93,9 +93,9 @@
   }
   
 .noticias-section {
-  padding: 4rem 0;
-  background: #e9ecef;
   min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
 }
 
 .noticias-header {
@@ -137,13 +137,13 @@
   overflow: hidden;
   transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   height: 100%;
 }
 
 .noticia-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .card-img-container {

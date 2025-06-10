@@ -1,7 +1,7 @@
 .MainCartilla {
-  padding: 2rem;
-  background-color: #e9ecef;
-  min-height: calc(100vh - 160px);
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
 }
 
 .divBusqueda {
@@ -18,13 +18,13 @@
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .input-buscar:focus {
   outline: none;
   border-color: #4a90e2;
-  box-shadow: 0 2px 8px rgba(74,144,226,0.2);
+  box-shadow: 0 4px 12px rgba(74,144,226,0.3);
 }
 
 .table {
@@ -32,7 +32,7 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   border-collapse: separate;
   border-spacing: 0;
 }
