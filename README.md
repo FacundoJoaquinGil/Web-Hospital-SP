@@ -1,5 +1,6 @@
 <h1>🏥 Pagina Web - Hospital San Pablo</h1>
 
+![Screenshot_1](https://github.com/user-attachments/assets/3ae5e598-2e70-4239-af5f-d5c95343c889)
 <br>
 
 <h3>📋 Descripción </h3>
