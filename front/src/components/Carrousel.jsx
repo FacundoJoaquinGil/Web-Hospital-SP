@@ -17,7 +17,9 @@ export const Carrousel = () => {
               <Carousel.Caption>
                 <h2>Hospital de San Pablo</h2>
                 <p>Brindando atención médica de calidad a nuestra comunidad</p>
-                <Button variant="light" size="lg" className="btn">Conocenos</Button>
+                <Button variant="light" size="lg" className="btn">
+                  <i className="fas fa-hospital"></i> Conócenos
+                </Button>
               </Carousel.Caption>
             </div>
           </div>
@@ -29,7 +31,9 @@ export const Carrousel = () => {
               <Carousel.Caption>
                 <h2>CAPS Nuestra Sra. Del Pilar</h2>
                 <p>Atención primaria de la salud cerca de tu hogar</p>
-                <Button variant="light" size="lg" className="btn">Ver Servicios</Button>
+                <Button variant="light" size="lg" className="btn">
+                  <i className="fas fa-stethoscope"></i> Ver Servicios
+                </Button>
               </Carousel.Caption>
             </div>
           </div>
@@ -41,7 +45,9 @@ export const Carrousel = () => {
               <Carousel.Caption>
                 <h2>CAPS Villa del Rosario</h2>
                 <p>Comprometidos con tu salud y bienestar</p>
-                <Button variant="light" size="lg" className="btn">Más Información</Button>
+                <Button variant="light" size="lg" className="btn">
+                  <i className="fas fa-info-circle"></i> Más Información
+                </Button>
               </Carousel.Caption>
             </div>
           </div>

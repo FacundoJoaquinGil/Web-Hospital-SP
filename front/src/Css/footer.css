@@ -3,7 +3,7 @@
 	width: 100%;
 	padding: 10px;
 	bottom: 0;
-	background-color: #333333;
+	background-color: #2a5239;
 }
 
 .container-footer{
@@ -20,14 +20,14 @@
 
 .derechos p{
 	text-align: center;
-	color: white;
+	color: #f8faf9;
 }
 
 .parrafo-footer p{
 	font-size: 17px;
 	text-transform: capitalize;
 	font-weight: 300;
-	color: white;
+	color: #f8faf9;
 	width: 800px;
 }
 
@@ -54,7 +54,7 @@
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #007bff;;
+	background-color: #ffffff;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -65,13 +65,12 @@
 	text-transform: capitalize;
 	text-decoration: none;
 	font-weight: 300;
-	color: #bbbbbb;
+	color: #f8faf9;
 	transition: all 0.3s ease;
 }
 
 
 .footer-col ul li a:hover{
-	color: #ffffff;
 	padding-left: 5px;
 }
 

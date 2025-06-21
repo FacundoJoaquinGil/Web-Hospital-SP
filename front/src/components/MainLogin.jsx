@@ -1,13 +1,23 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../Css/MainLogin.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import { useForm } from "../hooks/useForm";
-import Footer from "./Footer";
 import Swal from "sweetalert2";
 
 export const MainLogin = () => {
+
+  useEffect(() => {
+    // Agregar clase cuando se monta
+    document.body.classList.add("bodyLogin");
+
+    // Remover clase cuando se desmonta
+    return () => {
+      document.body.classList.remove("bodyLogin");
+    };
+  }, []);
+
   let navigate = useNavigate();
 
   const { handleLogear, getUser, getUserId, userId, userNombre } =
@@ -45,7 +55,7 @@ export const MainLogin = () => {
   };
 
   return (
-    <div className="">
+    <div className="contenedor-login">
       <div className="bodyLogin">
         <div className="Login" data-aos="flip-left">
           <form className="form1">
@@ -90,7 +100,6 @@ export const MainLogin = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

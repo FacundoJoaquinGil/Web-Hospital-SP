@@ -71,7 +71,7 @@ export const MainNoticias = () => {
                     rel="noopener noreferrer"
                     className="btn-noticia"
                   >
-                    Más Información
+                    <i className="fas fa-external-link-alt"></i> Más Información
                   </a>
                 </Card.Body>
               </Card>

@@ -1,15 +1,26 @@
+.contenedor-login{
+padding-bottom: 0em !important;
+}
+
+body.bodyLogin {
+  padding-bottom: 0 !important;
+}
 .bodyLogin{
-    background: linear-gradient(to top, #081b29c5, #0a1929aa);
-    height: 102vh;
+    
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-content: center;  
 }
+
 ::-webkit-input-placeholder{
     color: #8d8d8d;
 }
 .Login{
-    background: #081b29df;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.26) !important;
+    border: 1px solid #9cbca770;
+    border-radius: 10px;
+    background: #f8faf9;
     margin: auto;
     position: relative;
     width: 800px;
@@ -26,11 +37,11 @@
 }
 .titulo1{
     font-size: 35px;
-    color: #00a8ff;
+    color: #346548;
 }
 .inp1{
     padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #3333;
 }
 .input1{
     border: none;
@@ -40,7 +51,7 @@
     margin-top: 40px;
     padding-right: 10px;
     font-size: 17px;
-    color: #00a8ff;
+    color: #333333;
 }
 
 .submit1{
@@ -54,20 +65,21 @@
     border-radius: 40px;
     letter-spacing: 1px;
     cursor: pointer;
-    background: linear-gradient(45deg, #0097e6 0%, #00a8ff 100%);
+    background: #9cbca7;
 }
 
 .submit1:hover{
-    background: #0097e6;
+    background: #346548;
 }
 
 .banner1{
+    border-top-right-radius: 7px;
     position: absolute;
     top: 0;
     right: 0;
     width: 450px;
     height: 390px;
-    background: linear-gradient(to right, #0097e6 0%, #00a8ff 100%);
+    background: #346548;
     clip-path: polygon(0 0,100% 0,100% 100%, 60% 100%);
     padding-right: 70px;
     text-align: right;

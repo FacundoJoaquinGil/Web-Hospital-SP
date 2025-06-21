@@ -15,7 +15,7 @@ export const Footer = () => {
   	 			</ul>
   	 		</div>
   	 	</div>
-		<div className="derechos"><p>Todos los derechos reservados © 2024</p></div>
+		<div className="derechos"><p>© 2024 Hospital San Pablo. Todos los derechos reservados.</p></div>
   </footer>
   );
 };

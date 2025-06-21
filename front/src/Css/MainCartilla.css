@@ -18,13 +18,16 @@
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .input-buscar:focus {
   outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 4px 12px rgba(74,144,226,0.3);
+  border-color: #8bb196;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-tabla{
+  box-shadow: 2px 2px 2px black;
 }
 
 .table {
@@ -32,13 +35,15 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+
+  border: 2px solid #9cbca7;
+
   border-collapse: separate;
   border-spacing: 0;
 }
 
 .table thead th {
-  background-color: #4a90e2;
+  background-color: #9cbca7;
   color: white;
   font-weight: 600;
   padding: 1rem;
@@ -48,7 +53,7 @@
 }
 
 .table thead th:hover {
-  background-color: #357abd;
+  background-color: #8bb196;
 }
 
 .table tbody tr {

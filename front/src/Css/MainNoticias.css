@@ -96,11 +96,13 @@
   min-height: 100vh;
   background-color: #f8f9fa;
   padding: 2rem 0;
+  padding-bottom: 100px;
 }
 
 .noticias-header {
   text-align: center;
   margin-bottom: 3rem;
+  
 }
 
 .noticias-header h1 {
@@ -120,7 +122,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #1976D2, #2196F3);
+  background: #8bb196;
   border-radius: 2px;
 }
 
@@ -149,7 +151,7 @@
 .card-img-container {
   position: relative;
   overflow: hidden;
-  padding-top: 60%;
+  padding-top: 30%;
 }
 
 .card-img-container img {
@@ -168,58 +170,54 @@
 
 .noticia-card .card-body {
   padding: 1.5rem;
+  background-color: #f8faf9;
 }
 
 .noticia-card .card-title {
-  color: #1976D2;
+  color: #346548;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .noticia-card .card-text {
-  color: #666;
+  color: #333333;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
 .btn-noticia {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: transparent;
-  color: #2196F3 !important;
-  border: 2px solid #2196F3;
-  border-radius: 25px;
-  font-weight: 500;
+  border: none;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn-noticia::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #2196F3, #2196F3);
-  transition: all 0.3s ease;
-  z-index: -1;
+  cursor: pointer;
+  justify-content: center;
+  background: linear-gradient(135deg, #9cbca7, #6b9c7a);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(156, 188, 167, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-noticia:hover {
-  
-  color: white !important;
-  text-decoration: none;
+  background: linear-gradient(135deg, #6b9c7a, #346548);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(156, 188, 167, 0.4);
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.btn-noticia:hover::before {
-  left: 0;
+.btn-noticia:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(156, 188, 167, 0.3);
 }
 
 @media (max-width: 768px) {
