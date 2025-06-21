@@ -24,7 +24,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
+  filter: brightness(0.5);
 }
 
 .carousel-overlay {
@@ -67,14 +67,14 @@
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   cursor: pointer;
   justify-content: center;
-  background: linear-gradient(135deg, #9cbca7, #6b9c7a);
+  background: linear-gradient(135deg, #6b9c7a);
   color: #ffffff;
 
   text-transform: uppercase;
@@ -85,14 +85,14 @@
 .carousel-caption .btn:hover {
   background: linear-gradient(135deg, #6b9c7a, #346548);
   transform: translateY(-2px);
-  box-shadow: 0 2px 12px rgba(156, 188, 167, 0.185);
+  box-shadow: 0 2px 12px rgba(156, 188, 167, 0.097);
   color: #ffffff;
   text-decoration: none;
 }
 
 .carousel-caption .btn:active {
   transform: translateY(0);
-  box-shadow: 0 4px 16px rgba(156, 188, 167, 0.3);
+  box-shadow: 0 2px 20px rgba(156, 188, 167, 0.234);
 }
 
 /* Estilos de Secciones */
@@ -124,14 +124,13 @@
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
-  opacity: 0;
+  opacity: 0.1;
   transition: opacity 0.3s ease;
 }
 
 .carousel:hover .carousel-control-prev,
 .carousel:hover .carousel-control-next {
-  opacity: 1;
-  
+  opacity: 1; 
 }
 
 .carousel-control-prev-icon,
@@ -142,7 +141,8 @@
 
 /* Indicadores del Carrusel */
 .carousel-indicators {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
 }
 
 .carousel-indicators button {

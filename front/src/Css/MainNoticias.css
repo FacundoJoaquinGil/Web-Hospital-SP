@@ -127,7 +127,7 @@
 }
 
 .noticias-header p {
-  color: #666;
+  color: #8a9b8e;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -146,6 +146,7 @@
 .noticia-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid #9cbca772;
 }
 
 .card-img-container {
@@ -161,6 +162,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.01);
   transition: transform 0.3s ease;
 }
 
@@ -181,7 +183,7 @@
 }
 
 .noticia-card .card-text {
-  color: #333333;
+  color: #555;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -201,7 +203,7 @@
   cursor: pointer;
   justify-content: center;
   background: linear-gradient(135deg, #9cbca7, #6b9c7a);
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: 0 4px 16px rgba(156, 188, 167, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;

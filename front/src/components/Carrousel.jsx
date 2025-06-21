@@ -1,8 +1,8 @@
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import hospital1 from "../assets/hospsanp1.jpeg";
-import capsnsdp from "../assets/capsNuestraSraDelPilar.jpg";
-import capsvdr from "../assets/CapsVillaDelRosario.jpg";
+import hospital1 from "../assets/HospitalSanPablo.jpeg";
+import capsnsdp from "../assets/capsNuestraSraDelPilar2.jpeg";
+import capsvdr from "../assets/CapsVillaDelRosario2.jpeg";
 
 import "../Css/carousel.css";
 
