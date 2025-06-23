@@ -131,7 +131,52 @@
   }
 }
 
-.tablaHospitalSP {
-  animation: fadeIn 0.5s ease-out;
+.clinica-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
 }
-  
+
+.clinica-nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: #8bb196;
+  padding: 0.2rem 0.7rem;
+  transition: background-color 0.3s ,color 0.3s;
+}
+
+.clinica-nav-btn:hover{
+  border-radius: 5px;
+  background-color: #8bb1962f;
+  color: #6b9c7a;
+  outline: none;
+}
+
+.clinica-nav-title {
+  min-width: 350px;
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #346548;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+@keyframes clinicaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.clinica-fade {
+  animation: clinicaFadeIn 0.8s ease;
+}

@@ -1,20 +1,42 @@
+import { useState, useEffect } from "react";
 import "../Css/MainHoraAtencion.css"
+import axios from "axios";
+
+const CLINICAS = [
+  "Hospital San Pablo",
+  "Nuestra Sra. Del Pilar",
+  "CAPS Villa del Rosario"
+];
 
 export const MainHoraAtencion = () => {
-  const horarios = [
-    { especialidad: "Clínica", dias: "Lunes a Viernes", horarios: "07:00 a 18:00" },
-    { especialidad: "Oftalmología", dias: "Jueves", horarios: "12:30 a 16:00" },
-    { especialidad: "Psicología", dias: "Lunes a Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Odontología", dias: "Lunes a Viernes", horarios: "07:00 a 19:00" },
-    { especialidad: "Endocrinología", dias: "Lunes, Martes, Miércoles y Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Kinesiología", dias: "Lunes a Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Nutrición", dias: "Lunes a Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Pediatría", dias: "Lunes a Viernes", horarios: "07:00 a 19:00" },
-    { especialidad: "Ginecología", dias: "Lunes, Miércoles y Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Radiología", dias: "Lunes a Viernes", horarios: "07:00 a 17:00" },
-    { especialidad: "Ecografías", dias: "Lunes, Martes, Jueves y Viernes", horarios: "07:00 a 13:00" },
-    { especialidad: "Urología", dias: "Lunes", horarios: "07:00 a 13:00" }
-  ];
+  const [profesionales, setProfesionales] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [clinicaActual, setClinicaActual] = useState(0);
+  const [fadeKey, setFadeKey] = useState(0);
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/profesionales/")
+      .then((resp) => {
+        setProfesionales(resp.data);
+        setCargando(false);
+      })
+      .catch(() => setCargando(false));
+  }, []);
+
+  // Filtrar profesionales por clínica seleccionada
+  const clinicaNombre = CLINICAS[clinicaActual];
+  const profesionalesClinica = profesionales.filter(
+    (prof) => prof.clinica && prof.clinica.toLowerCase().includes(clinicaNombre.toLowerCase())
+  );
+
+  const handlePrev = () => {
+    setClinicaActual((prev) => (prev === 0 ? CLINICAS.length - 1 : prev - 1));
+    setFadeKey(fadeKey + 1);
+  };
+  const handleNext = () => {
+    setClinicaActual((prev) => (prev === CLINICAS.length - 1 ? 0 : prev + 1));
+    setFadeKey(fadeKey + 1);
+  };
 
   return (
     <div className="container-HA">
@@ -25,26 +47,46 @@ export const MainHoraAtencion = () => {
 
       <div className="tablaHospitalSP">
         <div className="tabla1">
-          <h2>Hospital de San Pablo</h2>
+          <div className="clinica-nav-container">
+            <button onClick={handlePrev} aria-label="Anterior" className="clinica-nav-btn">
+              <i className="fa-solid fa-chevron-left"></i>
+            </button>
+            <h2 className="clinica-nav-title">{clinicaNombre}</h2>
+            <button onClick={handleNext} aria-label="Siguiente" className="clinica-nav-btn">
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
           <h3>GUARDIAS DE LUNES A DOMINGOS</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Especialidad</th>
-                <th>Días</th>
-                <th>Horarios</th>
-              </tr>
-            </thead>
-            <tbody>
-              {horarios.map((horario, index) => (
-                <tr key={index}>
-                  <td>{horario.especialidad}</td>
-                  <td>{horario.dias}</td>
-                  <td>{horario.horarios}</td>
+          {cargando ? (
+            <p style={{textAlign: 'center'}}>Cargando...</p>
+          ) : (
+            <table className="clinica-fade" key={fadeKey}>
+              <thead>
+                <tr>
+                  <th>Especialidad</th>
+                  <th>Prestador</th>
+                  <th>Clínica</th>
+                  <th>Horarios</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {profesionalesClinica.length > 0 ? (
+                  profesionalesClinica.map((prof, idx) => (
+                    <tr key={prof.idProfesionales || idx}>
+                      <td>{prof.especialidad}</td>
+                      <td>{prof.prestador}</td>
+                      <td>{prof.clinica}</td>
+                      <td>{prof.horarios}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="4" style={{textAlign: 'center', color: '#888'}}>No hay profesionales cargados para esta clínica</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </div>

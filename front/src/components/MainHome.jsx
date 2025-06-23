@@ -117,7 +117,7 @@ export const MainHome = () => {
             servicios médicos
           </p>
 
-          <div className="mhqs-grid">
+          <div className="mhqs-grid" data-aos="fade-down">
             {/* Tarjeta 1 */}
             <div className="mhqs-card">
               <div className="mhqs-card-header">
@@ -247,7 +247,7 @@ export const MainHome = () => {
       </section>
 
       {/* Sección de Información Importante */}
-      <section className="mhii-important-info">
+      <section className="mhii-important-info" data-aos="fade-down">
         <div className="mhii-wrapper">
           <h2 className="mhii-title">Información Importante</h2>
           <p className="mhii-subtitle">
