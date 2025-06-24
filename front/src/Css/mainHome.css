@@ -1,5 +1,4 @@
 ::-webkit-scrollbar {
-  width: 12px;
   background: #f8faf9;
 }
 
@@ -27,6 +26,7 @@
 
 *{
   box-sizing: border-box;
+  scrollbar-width: auto;
 }
 
 body{
@@ -34,7 +34,6 @@ body{
   background-color: #f5f1ebc0;
   min-height: 100vh;
   position: relative;
-
 }
 
 /* Estilos generales */
