@@ -1,14 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "../Css/MainCartilla.css";
 import axios from "axios";
-import { UserContext } from "../context/UserContext";
-import Swal from 'sweetalert2';
 
 export const MainCartilla = () => {
   const [busqueda, setBusqueda] = useState("");
   const [profesionales, setProfesionales] = useState([]);
   const [profesionalesFiltrados, setProfesionalesFiltrados] = useState([]);
-  const { userNombre } = useContext(UserContext);
   const [paginaActual, setPaginaActual] = useState(1);
   const profesionalesPorPagina = 10;
 
@@ -38,41 +35,6 @@ export const MainCartilla = () => {
   useEffect(() => {
     mostrarProfesionales();
   }, []);
-
-  const borrarProfesional = async (id) => {
-    if (userNombre === "admin") {
-      try {
-        const result = await Swal.fire({
-          title: '¿Estás seguro?',
-          text: "Esta acción no se puede deshacer",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Sí, eliminar',
-          cancelButtonText: 'Cancelar'
-        });
-
-        if (result.isConfirmed) {
-          await axios.delete(`http://localhost:8000/profesionales/borrarProfesional/${id}`);
-          Swal.fire({
-            icon: "success",
-            title: "Profesional eliminado correctamente",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          mostrarProfesionales();
-        }
-      } catch (error) {
-        console.error("Error al eliminar el profesional:", error);
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "No se pudo eliminar el profesional"
-        });
-      }
-    }
-  };
 
   return (
     <div className="MainCartilla">
@@ -133,9 +95,6 @@ export const MainCartilla = () => {
                 <th>
                   Horarios
                 </th>
-                {userNombre === "admin" && (
-                  <th>Acciones</th>
-                )}
               </tr>
             </thead>
 
@@ -147,27 +106,11 @@ export const MainCartilla = () => {
                     <td>{profesional.prestador}</td>
                     <td>{profesional.clinica}</td>
                     <td>{profesional.horarios}</td>
-                    {userNombre === "admin" && (
-                      <td>
-                        <button
-                         className="btn btn-warning text-white"
-                          onClick={() => ""}
-                        >
-                          Editar
-                        </button>
-                        <button
-                          className="btn btn-danger"
-                          onClick={() => borrarProfesional(profesional.idProfesionales)}
-                        >
-                          Eliminar
-                        </button>
-                      </td>
-                    )}
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={userNombre === "admin" ? "5" : "4"}>
+                  <td colSpan={4} style={{ textAlign: "center" }}>
                     No se encontraron profesionales
                   </td>
                 </tr>

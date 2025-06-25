@@ -1,15 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import axios from "axios";
-import "../Css/editarAgente.css";
+import "../Css/agregrarUsuario.css";
 import Swal from 'sweetalert2';
 import PropTypes from 'prop-types';
 
-export const EditarAgente = ({ handleToggleUser}) => {
+export const EditarAgente = ({ handleToggleUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const {userIdEdit} = useContext(UserContext);
+  const { userIdEdit } = useContext(UserContext);
 
   const handleCancelar = () => {
     handleToggleUser();
@@ -29,14 +29,12 @@ export const EditarAgente = ({ handleToggleUser}) => {
 
   useEffect(() => {
     getUsuario();
-}, [userIdEdit]);
-
+  }, [userIdEdit]);
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
       const url = "http://localhost:8000/agentes/editarUsuario";
-
       const updatedUser = {
         usersid: userIdEdit,
         nomUser: username,
@@ -73,51 +71,31 @@ export const EditarAgente = ({ handleToggleUser}) => {
     }
   };
 
-  const handleUsernameChange = (e) => setUsername(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
-
   return (
-    <div className="body-editar-usuario">
-      <div className="editar-usuario-contenedor">
-        <h3 className="editar-usuario-titulo">Edita los datos del usuario</h3>
-        <form className="editar-usuario-formulario" onSubmit={handleOnSubmit}>
-          <div>
-            <label className="editar-usuario-label">Editar usuario:</label>
-            <input
-              type="text"
-              className="editar-usuario-input"
-              name="username"
-              onChange={handleUsernameChange}
-              value={username || ""}
-            />
-          </div>
-          <div>
-            <label className="editar-usuario-label">Editar contraseña:</label>
-            <input
-              type="password"
-              className="editar-usuario-input"
-              name="password"
-              onChange={handlePasswordChange}
-              value={password || ""}
-            />
-          </div>
-          <div className="body-botones-usuario">
-            <button
-              className="boton-cancelar-usuario"
-              type="button"
-              onClick={handleCancelar}
-            >
-              Cancelar
-            </button>
-            <button className="boton-editar-usuario" type="submit">
-              Editar
-            </button>
-          </div>
-        </form>
+    <form className="form-doc-nuevo" onSubmit={handleOnSubmit} style={{maxWidth: 600, margin: '0 auto', background: '#fff', borderRadius: 16, padding: '2.5rem 2rem', boxShadow: '0 2px 8px rgba(44,101,72,0.07)'}}>
+      <h2 className="usuarios-gestion-title" style={{fontSize: '2rem', marginBottom: '0.5rem'}}>Editar Usuario</h2>
+      <p className="usuarios-gestion-desc" style={{marginBottom: '2rem'}}>Modifica los datos del usuario seleccionado</p>
+      <div className="form-doc-grid">
+        <div>
+          <label className="agregar-profesional-label">Nombre de Usuario</label>
+          <input type="text" className="agregar-profesional-input" name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Ingrese el nombre de usuario" required />
+        </div>
+        <div>
+          <label className="agregar-profesional-label">Contraseña</label>
+          <input type="password" className="agregar-profesional-input" name="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Ingrese la contraseña" required />
+        </div>
       </div>
-    </div>
+      <div style={{display: 'flex', gap: '1rem', justifyContent: 'flex-end', marginTop: '2.2rem'}}>
+        <button type="button" className="usuarios-gestion-add-btn" style={{background: '#e0e0e0', color: '#346548'}} onClick={handleCancelar}>
+          Cancelar
+        </button>
+        <button type="submit" className="usuarios-gestion-add-btn" style={{display:'flex',alignItems:'center',gap:'0.7rem',background:'#346548'}}>
+          <i className="fa-solid fa-pen-to-square"></i> Guardar Cambios
+        </button>
+      </div>
+    </form>
   );
-}  
+};
 
 EditarAgente.propTypes = {
   handleToggleUser: PropTypes.func.isRequired,
