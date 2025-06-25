@@ -1,6 +1,8 @@
 <h1>🏥 Pagina Web - Hospital San Pablo</h1>
-
 <br>
+<img src="https://github.com/user-attachments/assets/529efa84-06a0-433f-8bd4-18734bad194a" alt="logo" width="160"/>
+
+
 
 <h3>📋 Descripción </h3>
 
@@ -23,6 +25,8 @@ React.js – Librería principal para construir la interfaz de usuario.
 Vite – Herramienta de build para desarrollo rápido.
 
 Bootstrap 5 – Estilos y componentes responsivos.
+
+Font Awesome 6 – Íconos vectoriales personalizables mediante clases CSS.
 
 SweetAlert2 – Alertas visuales e interactivas.
 
