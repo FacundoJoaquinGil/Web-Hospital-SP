@@ -1,0 +1,151 @@
+/* Tabla de Usuarios - Diseño moderno */
+.usuarios-table-wrapper {
+  background: #f8faf9;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44, 101, 72, 0.07);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.usuarios-table-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.7rem;
+}
+.usuarios-table-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+.usuarios-table-subtitle {
+  color: #7a8c7f;
+  font-size: 1.08rem;
+  margin: 0;
+}
+.usuarios-table-scroll {
+  overflow-x: auto;
+}
+.usuarios-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+.usuarios-table thead tr {
+  background: #f6faf7;
+}
+.usuarios-table th, .usuarios-table td {
+  padding: 1.1rem 0.7rem;
+  text-align: left;
+  font-size: 1.08rem;
+  font-weight: 500;
+  border-bottom: 1.5px solid #e6edea;
+}
+.usuarios-table th {
+  color: #346548;
+  background: #f6faf7;
+  border-top: none;
+}
+
+.usuarios-table td {
+  color: #346548;
+
+  background: transparent;
+}
+.usuarios-table tr:last-child td {
+  border-bottom: none;
+}
+.usuarios-table-usercell {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.usuarios-table-avatar {
+  background: #9cbca7;
+  color: #fff;
+  font-size: 1.15rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.2rem;
+}
+.usuarios-table-username {
+  font-weight: 500;
+  color: #346548;
+  font-size: 1rem;
+}
+.usuarios-table-badge {
+  display: inline-block;
+  padding: 0.25em 1.1em;
+  border-radius: 1.2em;
+  font-size: 1.01rem;
+  font-weight: 600;
+  border: 1.5px solid #e6edea;
+  background: #fff;
+  margin-right: 0.2rem;
+}
+.badge-admin { color: #a94442; border-color: #f5c6cb; background: #fff0f0; }
+.badge-recepcionista { color: #7c3aed; border-color: #d1c4e9; background: #f6f0ff; }
+.badge-medico { color: #2563eb; border-color: #bbdefb; background: #f0f7ff; }
+.badge-enfermero { color: #15803d; border-color: #b9f6ca; background: #f0fff4; }
+.badge-secretaria { color: #b59b1c; border-color: #fff9c4; background: #fffde7; }
+.badge-contador { color: #b26a00; border-color: #ffe0b2; background: #fff8e1; }
+.badge-farmaceutico { color: #009688; border-color: #b2dfdb; background: #e0f2f1; }
+.badge-laboratorista { color: #512da8; border-color: #d1c4e9; background: #ede7f6; }
+.usuarios-table-lastaccess {
+  color: #7a8c7f;
+  font-size: 1.01rem;
+  font-weight: 500;
+}
+.usuarios-table-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+.usuarios-table-action-btn {
+  border: none;
+  outline: none;
+  background: #eaf4ef;
+  color: #346548;
+  border-radius: 7px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(44, 101, 72, 0.07);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.usuarios-table-action-btn.view {
+  background: #eaf1f4;
+  color: #5c92e9;
+}
+.usuarios-table-action-btn.edit {
+  background: #fffbe6;
+  color: #b59b1c;
+}
+.usuarios-table-action-btn.delete {
+  background: #fff0f0;
+  color: #f7524f;
+}
+.usuarios-table-action-btn:hover {
+  filter: brightness(0.95);
+  transform: scale(1.07);
+}
+
+@media (max-width: 900px) {
+  .usuarios-table-wrapper {
+    padding: 1.2rem 0.3rem;
+  }
+  .usuarios-table th, .usuarios-table td {
+    padding: 0.7rem 0.3rem;
+    font-size: 0.98rem;
+  }
+  .usuarios-table-title {
+    font-size: 1.3rem;
+  }
+}

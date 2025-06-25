@@ -110,6 +110,32 @@
   display: none;
 }
 
+.logout-button {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.7rem !important;
+  border-radius: 10px !important;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.123);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button i {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.logout-button::after {
+    display: none !important;
+}
+
 .custom-toggler {
   border: none;
   padding: 0.5rem;

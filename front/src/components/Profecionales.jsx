@@ -109,7 +109,8 @@ const Profecionales = () => {
     <>
       <div className="body-agregar-profesional">
         <div className="agregar-profesional-contenedor">
-          <h3 className="agregar-profesional-titulo">Datos del profesional</h3>
+          <h1 className="usuarios-gestion-title">Datos del profesional</h1>
+          <p className="usuarios-gestion-desc">Agrega o edita la información de los profesionales del sistema hospitalario</p>
   
           <form className="agregar-profesional-formulario" onSubmit={onSubmit}>
             <div className="form-section">

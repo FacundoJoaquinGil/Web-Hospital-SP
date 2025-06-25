@@ -301,3 +301,27 @@
     padding: 18px 6px;
   }
 }
+
+/* Alerta de seguridad debajo de la tarjeta de ayuda */
+.login-security-alert {
+  margin-top: 1rem;
+  background: #fdf6ec;
+  border: 1.5px solid #f5c97b;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  color: #92400e;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(245,201,123,0.08);
+}
+.login-security-alert-icon {
+  margin-right: 0.7rem;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+}
+.login-security-alert-icon .fa-circle-exclamation {
+  color: #e2a03c;
+  font-size: 1.2rem;
+}

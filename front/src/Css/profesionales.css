@@ -38,10 +38,11 @@ input[type=number] {
   
   .agregar-profesional-titulo {
     text-align: center;
-    color: #2c3e50;
-    font-size: 2rem;
+    color: #346548;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
-    font-weight: 600;
+    font-weight: 800;
+    letter-spacing: 1px;
   }
   
   .form-section {
@@ -52,11 +53,11 @@ input[type=number] {
   }
   
   .form-section h4 {
-    color: #2c3e50;
+    color: #346548;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #4A90E2;
+    border-bottom: 2px solid #8bb196;
   }
   
   .agregar-profesional-formulario {
@@ -67,24 +68,25 @@ input[type=number] {
   .agregar-profesional-label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
-    font-weight: 500;
+    color: #25613e;
+    font-weight: 600;
   }
   
   .agregar-profesional-input {
     width: 100%;
     padding: 0.75rem;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: white;
+    border: 1.5px solid #dbeee2;
+    border-radius: 12px;
+    font-size: 1.08rem;
+    color: #346548;
+    background: #f9f9f9;
+    transition: border 0.3s, box-shadow 0.3s;
   }
   
   .agregar-profesional-input:focus {
-    border-color: #4A90E2;
-    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
-    outline: none;
+    border-color: #8bb196;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(74, 144, 226, 0.13);
   }
   
   .agregar-profesional-input[type="textarea"] {
@@ -99,22 +101,21 @@ input[type=number] {
   }
   
   .boton-agregar {
-    padding: 1rem 2rem;
-    background: #4A90E2;
-    color: white;
+    padding: 0.7rem 2.1rem;
+    background: #9cbca7;
+    color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.08rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(44, 101, 72, 0.07);
   }
   
   .boton-agregar:hover {
-    background: #357ABD;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+    background: #6b9c7a;
+    color: #fff;
   }
   
   @media (min-width: 768px) {
@@ -140,4 +141,11 @@ input[type=number] {
       padding: 1rem;
     }
   }
+  
+.usuarios-gestion-title {
+  margin-bottom: 0.5rem !important;
+}
+.usuarios-gestion-desc {
+  margin-bottom: 2.5rem !important;
+}
   

@@ -6,6 +6,7 @@ import { UserContext } from "../context/UserContext";
 import { useForm } from "../hooks/useForm";
 import Swal from "sweetalert2";
 import logo1 from "../assets/logo1.png";
+import logo2 from "../assets/logo2.png";
 
 export const MainLogin = () => {
   const navigate = useNavigate();
@@ -30,18 +31,32 @@ export const MainLogin = () => {
         getUser(valuesForm.usuario);
         getUserId(resp.data.userId);
         Swal.fire({
-          position: "top",
-          title: `Bienvenido ${valuesForm.usuario}`,
+          icon: "success",
+          title: "Acceso concedido",
+          html: `<b>Bienvenido, ${valuesForm.usuario}.</b><br>Ha ingresado correctamente al sistema.<br><img src="${logo2}" alt="Logo" style="margin-top:18px;max-width:90px;display:block;margin-left:auto;margin-right:auto;" />`,
           showConfirmButton: false,
-          timer: 1000,
+          timer: 2000,
+          timerProgressBar: true,
+          customClass: {
+            title: 'swal2-title',
+            popup: 'swal2-popup'
+          }
         });
         navigate("/", { replace: true });
       })
       .catch(() => {
         Swal.fire({
-          icon: "error",
-          title: "Error!",
-          text: "usuario o contraseña incorrectos",
+          icon: "warning",
+          title: "Acceso denegado",
+          html: `
+            <b>Usuario o contraseña incorrectos.</b><br>
+            Por favor, verifique sus datos e intente nuevamente.<br><br>
+            <a href="#" style="color:#6b9c7a;text-decoration:none;">¿Olvidó su contraseña?</a>
+          `,
+          confirmButtonText: "Intentar de nuevo",
+          confirmButtonColor: "#6b9c7a",
+          timer: 4000,
+          timerProgressBar: true,
         });
       });
   };
@@ -70,6 +85,15 @@ export const MainLogin = () => {
               <li><a href="#politicas-seguridad" className="login-help-link"><span className="login-help-icon"><i className="fa-solid fa-shield"></i></span> Políticas de Seguridad</a></li>
             </ul>
           </div>
+          {/* Alerta de seguridad debajo de la tarjeta de ayuda */}
+          <div className="login-security-alert">
+            <span className="login-security-alert-icon">
+              <i className="fa-solid fa-circle-exclamation"></i>
+            </span>
+            <span>
+            La funcionalidad para registrar profesionales está actualmente restringida a usuarios con permisos de administrador.
+            </span>
+          </div>
         </div>
         {/* Panel Derecho */}
         <div className="login-right-panel">
@@ -77,7 +101,7 @@ export const MainLogin = () => {
             <h2 className="login-form-title">Iniciar Sesión</h2>
             <p className="login-form-desc">Ingrese sus credenciales para acceder al sistema</p>
             <div className="login-form-group">
-              <label htmlFor="login-usuario" className="login-form-label">Email o Usuario</label>
+              <label htmlFor="login-usuario" className="login-form-label">Usuario</label>
               <div className="login-form-inputbox">
                 <i className="fa-regular fa-user" style={{ color: '#7a8c7f', fontSize: '1.2rem', marginRight: '0.7rem' }}></i>
                 <input
@@ -85,9 +109,10 @@ export const MainLogin = () => {
                   className="login-form-input"
                   type="text"
                   name="usuario"
-                  placeholder="usuario@medicenter.com"
+                  placeholder="Nombre de usuario"
                   onChange={onInputChange}
                   autoComplete="username"
+                  required
                 />
               </div>
             </div>
@@ -103,6 +128,7 @@ export const MainLogin = () => {
                   placeholder="********"
                   onChange={onInputChange}
                   autoComplete="current-password"
+                  required
                 />
                 <span onClick={handleTogglePassword} style={{ cursor: 'pointer', marginLeft: '0.7rem' }}>
                   {showPassword ? (

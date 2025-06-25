@@ -89,8 +89,9 @@ export const Header = () => {
                       id="button"
                       className="nav-link logout-button"
                       onClick={handleLogout}
+                      title="Salir"
                     >
-                      Salir
+                      <i className="fa-solid fa-arrow-right-from-bracket"></i>
                     </button>
                   </div>
                 </>

@@ -44,45 +44,72 @@ export const AdminUsuarios = () => {
   };
 
   return (
-    <div className="pt-3">
-      <div className="pb-3">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Buscar Usuarios..."
-          value={filtro}
-          onChange={(e) => setFiltro(e.target.value)}
-        />
+    <div className="usuarios-gestion-wrapper">
+      <div className="usuarios-gestion-header">
+        <div>
+          <h1 className="usuarios-gestion-title">Gestión de Usuarios</h1>
+          <p className="usuarios-gestion-desc">Administra los usuarios del sistema hospitalario</p>
+        </div>
+        <button
+          className="usuarios-gestion-add-btn"
+          onClick={() => {
+            setToggleUser(true);
+            setToggleEditar(true);
+          }}
+        >
+          <i className="fa-solid fa-plus"></i> Agregar Usuario
+        </button>
       </div>
-
-      <button
-        className="boton-agregar"
-        onClick={() => {
-          setToggleUser(true);
-          setToggleEditar(true);
-        }}
-      >
-        Agregar Usuario
-      </button>
-
-      {toggleUser ? (
-        <div className="pb-3">
-          {toggleEditar ? (
-            <AgregarUsuario handleToggleUser={handleToggleUser} />
-          ) : (
-            <EditarAgente
-              handleToggleEditar={handleToggleEditar}
-              handleToggleUser={handleToggleUser}
-            />
+      <div className="usuarios-gestion-toolbar">
+        <div className="usuarios-gestion-searchbox">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            className="usuarios-gestion-search-input"
+            placeholder="Buscar por nombre de usuarios ..."
+            value={filtro}
+            onChange={(e) => setFiltro(e.target.value)}
+          />
+          {filtro && (
+            <button
+              type="button"
+              className="clear-search-btn"
+              onClick={() => setFiltro('')}
+              aria-label="Limpiar búsqueda"
+            >
+              ×
+            </button>
           )}
         </div>
-      ) : (
-        <TablaUsuarios
-          usuarios={usuariosFiltrados}
-          handleToggleEditar={handleToggleEditar}
-          getUsuarios={getUsuarios} 
-        />
-      )}
+        <div className="usuarios-gestion-toolbar-actions">
+          <button className="usuarios-gestion-toolbar-btn">
+            <i className="fa-solid fa-filter"></i> Filtros
+          </button>
+          <button className="usuarios-gestion-toolbar-btn">
+            <i className="fa-solid fa-download"></i> Exportar
+          </button>
+        </div>
+      </div>
+      <div className="usuarios-gestion-content">
+        {toggleUser ? (
+          <div className="pb-3">
+            {toggleEditar ? (
+              <AgregarUsuario handleToggleUser={handleToggleUser} />
+            ) : (
+              <EditarAgente
+                handleToggleEditar={handleToggleEditar}
+                handleToggleUser={handleToggleUser}
+              />
+            )}
+          </div>
+        ) : (
+          <TablaUsuarios
+            usuarios={usuariosFiltrados}
+            handleToggleEditar={handleToggleEditar}
+            getUsuarios={getUsuarios}
+          />
+        )}
+      </div>
     </div>
   );
 };

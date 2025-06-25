@@ -1,8 +1,7 @@
-import { Button } from "react-bootstrap";
 import AdminUsuarios from "./AdminUsuarios";
 import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import Documentos from "./Documentos";
+import AdminDocumentos from "./AdminDocumentos";
 import Profecionales from "./Profecionales";
 import AdminNoticias from "./AdminNoticias";
 import AdminHorarios from "./AdminHorarios";
@@ -13,11 +12,11 @@ export const MainControl = () => {
   const { userNombre } = useContext(UserContext);
 
   const menuItems = [
-    { id: "usuarios", label: "Usuarios", component: <AdminUsuarios /> },
-    { id: "documentos", label: "Documentos", component: <Documentos /> },
-    { id: "profesionales", label: "Agregar Profesional", component: <Profecionales /> },
-    { id: "noticias", label: "Gestionar Noticias", component: <AdminNoticias /> },
-    { id: "horarios", label: "Gestionar Horarios", component: <AdminHorarios /> }
+    { id: "usuarios", label: "Usuarios", icon: "fa-users", count: 247, component: <AdminUsuarios /> },
+    { id: "documentos", label: "Documentos", icon: "fa-file-alt", count: 1834, component: <AdminDocumentos /> },
+    { id: "profesionales", label: "Agregar Profesional", icon: "fa-user-plus", count: null, component: <Profecionales /> },
+    { id: "noticias", label: "Gestionar Noticias", icon: "fa-newspaper", count: 45, component: <AdminNoticias /> },
+    { id: "horarios", label: "Gestionar Horarios", icon: "fa-clock", count: null, component: <AdminHorarios /> }
   ];
 
   return (
@@ -32,15 +31,23 @@ export const MainControl = () => {
         <div className="row">
           <div className="col-xl-4">
             <div className="menu-buttons">
-              {menuItems.map((item) => (
-                <Button
-                  key={item.id}
-                  className={`panel-control-btn ${activeComponent === item.id ? "panel-control-btn-active" : ""}`}
-                  onClick={() => setActiveComponent(item.id)}
-                >
-                  {item.label}
-                </Button>
-              ))}
+              <ul className="panel-menu-list">
+                {menuItems.map((item) => (
+                  <li
+                    key={item.id}
+                    className={`panel-menu-item${activeComponent === item.id ? " panel-menu-item-active" : ""}`}
+                    onClick={() => setActiveComponent(item.id)}
+                  >
+                    <span className="panel-menu-icon">
+                      <i className={`fa-solid ${item.icon}`}></i>
+                    </span>
+                    <span className="panel-menu-label">{item.label}</span>
+                    {item.count !== null && (
+                      <span className="panel-menu-badge">{item.count}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
