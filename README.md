@@ -92,7 +92,19 @@ npm i
 <h3> 3. Copiar el script de la carpeta "DataBase"  y ejecutarlo dentro de MySQL Workbench </h3>
 <br>
 
-<h3> 4. Iniciar el servidor de desarrollo: </h3>
+<h3> 4. variables de entorno - backend </h3>
+
+```bash
+PORT= 8000
+
+SQL_HOST='localhost'
+SQL_USER=
+SQL_PASS=
+SQL_DB_NAME='HospSanPablo'
+```
+<br>
+
+<h3> 5. Iniciar el servidor de desarrollo: </h3>
 
 ```bash
 npm run dev
