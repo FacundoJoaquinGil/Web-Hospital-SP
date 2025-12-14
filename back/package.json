@@ -1,10 +1,11 @@
 {
   "name": "back-hospital-sanpablo",
-  "version": "0.0.1",
-  "description": "creamos la conexion con la base de datos",
+  "version": "0.4.3",
+  "description": "backend web hospital sanpablo",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
