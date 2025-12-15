@@ -82,10 +82,12 @@ git clone https://github.com/FacundoJoaquinGil/Web-Hospital-SP
 ```
 <br>
 
-<h3> 2. Instalar dependencias: </h3>
+<h3> 2. Instalar todas las dependencias: </h3>
+
+<p>Desde la raíz del proyecto:</p>
 
 ```bash
-npm i
+npm run install:all
 ```
 <br>
 
@@ -95,16 +97,17 @@ npm i
 <h3> 4. variables de entorno - backend </h3>
 
 ```bash
-PORT= 8000
+PORT=8000
 
-SQL_HOST='localhost'
+SQL_HOST=
 SQL_USER=
 SQL_PASS=
-SQL_DB_NAME='HospSanPablo'
+SQL_DB_NAME=HospSanPablo
 ```
 <br>
 
 <h3> 5. Iniciar el servidor de desarrollo: </h3>
+<p></p>
 
 ```bash
 npm run dev
@@ -114,6 +117,7 @@ npm run dev
 <h3>🔧 Requisitos del Sistema</h3>
 <br>
 
-- Node.js (v14 o superior)
-- MySQL Workbench (v8.0 o superior)
+- Node.js (20.9.0)
+- Express (4.19.2)
 - NPM (v6 o superior)
+- MySQL Workbench (v8.0 o superior)

@@ -20,6 +20,7 @@
     "env-var": "^7.5.0",
     "express": "^4.19.2",
     "express-fileupload": "^1.5.1",
+    "hospital-san-pablo": "file:..",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1"
